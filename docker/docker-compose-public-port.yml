@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+
+    web:
+        ports:
+            - $PUBLIC_PORT:80

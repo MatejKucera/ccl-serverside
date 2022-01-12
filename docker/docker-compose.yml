@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+
+    web:
+        build:
+            context: ../
+            dockerfile: docker/Dockerfile
+            target: web
+        restart: always
+        env_file:
+            - ../.env
+        volumes:
+            - $PUBLIC_DIRECTORY_VOLUME:$PUBLIC_DIRECTORY
+            - $SOURCE_DIRECTORY_VOLUME:$SOURCE_DIRECTORY
+        labels:
+            - traefik.enable=true
+            - traefik.http.routers.ccl.rule=Host(`$HOST`)
+            - traefik.http.routers.ccl.entrypoints=websecure
+            - traefik.http.routers.ccl.tls=true
+            - traefik.http.routers.ccl.tls.certresolver=myresolver
+            - traefik.http.routers.ccl.tls.options=mintls12@file
