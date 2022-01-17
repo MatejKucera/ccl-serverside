@@ -15,8 +15,8 @@ services:
             - $SOURCE_DIRECTORY_VOLUME:$SOURCE_DIRECTORY
         labels:
             - traefik.enable=true
-            - traefik.http.routers.ccl.rule=Host(`$HOST`)
-            - traefik.http.routers.ccl.entrypoints=websecure
-            - traefik.http.routers.ccl.tls=true
-            - traefik.http.routers.ccl.tls.certresolver=myresolver
-            - traefik.http.routers.ccl.tls.options=mintls12@file
+            - traefik.http.routers.$TRAEFIK_RESOLVER.rule=Host(`$HOST`)
+            - traefik.http.routers.$TRAEFIK_RESOLVER.entrypoints=websecure
+            - traefik.http.routers.$TRAEFIK_RESOLVER.tls=true
+            - traefik.http.routers.$TRAEFIK_RESOLVER.tls.certresolver=myresolver
+            - traefik.http.routers.$TRAEFIK_RESOLVER.tls.options=mintls12@file
