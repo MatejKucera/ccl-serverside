@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source>
+
+    <server>
+        <title>Example RP</title>
+        <realmlist>example.com:8891</realmlist>
+        <web>https://example.com</web>
+        <help>https://example.com/launcher</help> 
+        <guid>example.com</guid>                  
+    </server>
+
+    <mode>available</mode>
+
+    <launcher>
+        <currentVersion>3</currentVersion> 
+        <url>https://launcher.example.com/CustomClientLauncher.exe</url> 
+        <allowUpdate>true</allowUpdate>                          
+	<exe>CustomClientLauncher.exe</exe>
+    </launcher>
+
+    <patches>
+        <patch>
+            <file>patch-A.MPQ</file> 
+            <url>https://launcher.example.com/patch-A.MPQ</url> 
+            <md5>6ad8184077b20b8d85b9a77e995bd590</md5>      
+            <optional>false</optional> 
+        </patch>
+        <patch>
+            <file>patch-B.MPQ</file>
+            <url>https://launcher.example.com/patch-B.MPQ</url>
+            <md5>8e1c8289d286c7612e6464922c978c28</md5> 
+            <optional>false</optional>
+        </patch>
+    </patches>
+
+    <lastUpdate>2022-01-12T19:48:45+0000</lastUpdate>
+
+
+</source>
